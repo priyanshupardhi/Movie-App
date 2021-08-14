@@ -1,0 +1,42 @@
+<nb-layout>
+    <nb-layout-header>
+        <h3>Matching Movies "Batman"</h3>    
+    </nb-layout-header>
+
+
+<!-- List of movies with details -->
+<nb-layout-column>
+    <a routerLink="/">back <br></a>
+        <nb-card-body class="poster">
+            <nb-layout-column class="main-col"*ngFor="let movie of movies">
+                <nb-flip-card >
+                    <nb-card-front>
+                        <nb-card accent="danger">
+                            <nb-card-body>
+                                <img [src]="movie.Poster" [alt]="movie.Title"><br>
+                                    <button nbButton ghost status="danger">
+                                        Add to Favorite  <nb-icon icon="star"></nb-icon>
+                                    </button>
+                            </nb-card-body>
+                        </nb-card>
+                    </nb-card-front>
+                    <nb-card-back>
+                        <nb-card>
+                            <nb-card-body>
+                                <div>
+                                 <h6>  Description: </h6> 
+                                <p>Title: {{ movie.Title }} </p><br>
+                                <p>Type: {{ movie.Type }} </p><br>
+                                <p>Release year: {{ movie.Year }} </p><br>
+                                <p> imdbID: {{ movie.imdbID }} </p><br>
+                                </div>
+                            </nb-card-body>
+                            </nb-card>
+                    </nb-card-back>
+                </nb-flip-card>
+            </nb-layout-column>
+        </nb-card-body>
+</nb-layout-column>
+<hr />
+<nb-layout-footer>Build using Angular, Nebula and love by Priyanshu Pardhi</nb-layout-footer>
+</nb-layout>
